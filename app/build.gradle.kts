@@ -49,7 +49,19 @@ android {
         }
     }
 }
+publishing {
+    publications {
+        create("release", MavenPublication::class) {
+            groupId = "com.github.RhymezxCode"
+            artifactId = "TrackMe"
+            version = "1.0.3"
 
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
