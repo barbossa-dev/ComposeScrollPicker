@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
-    id("maven-publish")
 }
 
 android {
@@ -49,26 +48,8 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
 }
-publishing {
-    publications {
-        create("release", MavenPublication::class) {
-            groupId = "com.github.RhymezxCode"
-            artifactId = "TrackMe"
-            version = "1.0.3"
 
-            afterEvaluate {
-                from(components["release"])
-            }
-        }
-    }
-}
 dependencies {
     implementation(project(":ComposeScrollPicker"))
     implementation(libs.androidx.core.ktx)
