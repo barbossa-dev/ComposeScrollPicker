@@ -10,7 +10,6 @@ plugins {
 android {
     namespace = "ir.barbossa.composescrollpicker"
     compileSdk = 34
-
     defaultConfig {
         minSdk = 24
 
@@ -28,14 +27,22 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_20
-        targetCompatibility = JavaVersion.VERSION_20
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "20"
+        jvmTarget = "1.8"
     }
 }
-
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.runtime.android)
@@ -45,16 +52,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-}
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components.getByName("release"))
-                groupId = "ir.barbossa.ComposeScrollPicker"
-                artifactId = "scroll-picker-compose"
-                version = "1.0"
-            }
-        }
-    }
 }
