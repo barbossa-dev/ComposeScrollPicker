@@ -40,7 +40,19 @@ android {
         }
     }
 }
+publishing {
+    publications {
+        create("release", MavenPublication::class) {
+            groupId = "ir.barbossa.composescrollpicker"
+            artifactId = "ComposeScrollPicker"
+            version = "1.0.3"
 
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.runtime.android)

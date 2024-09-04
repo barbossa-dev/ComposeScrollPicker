@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ScrollPicker"
 include(":app")
+include(":ComposeScrollPicker")
