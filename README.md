@@ -17,7 +17,7 @@ Add the dependencies to app-level build.gradle file
 ```gradle
 dependencies {
     ...
-    implementation 'com.github.barbossa-dev:ComposeScrollPicker:Tag'
+    implementation 'com.github.barbossa-dev:ComposeScrollPicker:1.0.8'
 }
 ```
 
