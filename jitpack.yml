@@ -3,3 +3,5 @@ jdk:
 before_install:
   - sdk install java 8.0.292-open
   - sdk use java 8.0.292-open
+  - export JAVA_HOME=$HOME/.sdkman/candidates/java/8.0.292-open
+
