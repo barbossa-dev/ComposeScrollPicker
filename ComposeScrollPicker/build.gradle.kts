@@ -1,4 +1,3 @@
-import io.grpc.internal.SharedResourceHolder.release
 
 plugins {
     alias(libs.plugins.android.library)
@@ -43,9 +42,9 @@ android {
 publishing {
     publications {
         create("release", MavenPublication::class) {
-            groupId = "ir.barbossa.composescrollpicker"
+            groupId = "com.github.barbossa-dev"
             artifactId = "ComposeScrollPicker"
-            version = "1.0.3"
+            version = "1.0.5"
 
             afterEvaluate {
                 from(components["release"])
