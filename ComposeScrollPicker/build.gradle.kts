@@ -44,7 +44,7 @@ publishing {
         create("release", MavenPublication::class) {
             groupId = "com.github.barbossa-dev"
             artifactId = "ComposeScrollPicker"
-            version = "1.0.7"
+            version = "1.0.8"
 
             afterEvaluate {
                 from(components["release"])
