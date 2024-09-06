@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.HorizontalDivider
@@ -29,6 +30,7 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
 import ir.barbossa.composescrollpicker.PickerState
 import ir.barbossa.composescrollpicker.rememberPickerState
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -50,7 +52,8 @@ fun ScrollPicker(
     val visibleItemsMiddle = visibleItemsCount / 2
     val listScrollCount = Integer.MAX_VALUE
     val listScrollMiddle = listScrollCount / 2
-    val listStartIndex = listScrollMiddle - listScrollMiddle % items.size - visibleItemsMiddle + startIndex
+    val listStartIndex =
+        listScrollMiddle - listScrollMiddle % items.size - visibleItemsMiddle + startIndex
 
     fun getItem(index: Int) = items[index % items.size]
 
@@ -95,6 +98,7 @@ fun ScrollPicker(
                     modifier = Modifier
                         .onSizeChanged { size -> itemHeightPixels.intValue = size.height }
                         .then(textModifier)
+                        .padding(8.dp)
                 )
             }
         }

@@ -73,7 +73,6 @@ class MainActivity : ComponentActivity() {
                                 items = values,
                                 visibleItemsCount = 3,
                                 modifier = Modifier.weight(0.3f),
-                                textModifier = Modifier.padding(8.dp),
                                 textStyle = TextStyle(fontSize = 32.sp, color = Color.White),
                                 dividerColor = Color.Blue
                             )
@@ -82,7 +81,6 @@ class MainActivity : ComponentActivity() {
                                 items = units,
                                 visibleItemsCount = 3,
                                 modifier = Modifier.weight(0.7f),
-                                textModifier = Modifier.padding(8.dp),
                                 textStyle = TextStyle(fontSize = 32.sp, color = Color.White),
                                 dividerColor = Color.Blue
                             )
