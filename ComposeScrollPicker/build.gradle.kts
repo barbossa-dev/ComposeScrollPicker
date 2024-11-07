@@ -38,6 +38,9 @@ android {
             withJavadocJar()
         }
     }
+    buildFeatures{
+        compose=true
+    }
 }
 publishing {
     publications {

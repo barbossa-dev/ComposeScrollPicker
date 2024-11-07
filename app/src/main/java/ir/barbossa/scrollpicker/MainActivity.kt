@@ -26,7 +26,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ir.barbossa.composescrollpicker.ScrollPicker
 import ir.barbossa.composescrollpicker.rememberPickerState
 import ir.barbossa.scrollpicker.ui.theme.ScrollPickerTheme
 

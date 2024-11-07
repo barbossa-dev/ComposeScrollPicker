@@ -51,7 +51,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":ComposeScrollPicker"))
+    implementation("com.github.barbossa-dev:ComposeScrollPicker:1.0.9")
+//    implementation(project(":ComposeScrollPicker"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
