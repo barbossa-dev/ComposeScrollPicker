@@ -1,4 +1,6 @@
-package ir.barbossa.scrollpicker
+@file:OptIn(ExperimentalFoundationApi::class)
+
+package ir.barbossa.composescrollpicker
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
@@ -31,12 +33,9 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import ir.barbossa.composescrollpicker.PickerState
-import ir.barbossa.composescrollpicker.rememberPickerState
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ScrollPicker(
     modifier: Modifier = Modifier,
@@ -58,7 +57,7 @@ fun ScrollPicker(
     fun getItem(index: Int) = items[index % items.size]
 
     val listState = rememberLazyListState(initialFirstVisibleItemIndex = listStartIndex)
-    val flingBehavior = rememberSnapFlingBehavior(lazyListState = listState)
+    val flingBehavior = rememberSnapFlingBehavior(listState)
 
     val itemHeightPixels = remember { mutableIntStateOf(0) }
     val itemHeightDp = pixelsToDp(itemHeightPixels.intValue)
