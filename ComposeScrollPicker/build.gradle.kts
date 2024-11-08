@@ -8,10 +8,9 @@ plugins {
 
 android {
     namespace = "ir.barbossa.composescrollpicker"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         minSdk = 24
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -47,7 +46,7 @@ publishing {
         create("release", MavenPublication::class) {
             groupId = "com.github.barbossa-dev"
             artifactId = "ComposeScrollPicker"
-            version = "1.0.8"
+            version = "1.1.2"
 
             afterEvaluate {
                 from(components["release"])
@@ -57,7 +56,6 @@ publishing {
 }
 dependencies {
     implementation(libs.androidx.core.ktx)
-    implementation(libs.runtime.android)
     implementation(libs.androidx.runtime.android)
     implementation(libs.androidx.foundation.android)
     implementation(libs.androidx.material3.android)
